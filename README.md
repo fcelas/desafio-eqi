@@ -35,6 +35,4 @@
     <li>Font Awesome</li>
     <li>JQuery</li>
     <li>Chart.js</li>
-    <li>Jest</li>
-    <li>Docker</li>
 </ul>
