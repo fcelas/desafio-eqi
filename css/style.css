@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgba(239, 239, 239, 255) !important;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    text-align: center;
+    padding: 15px;
+    font-size: 2.25rem !important;
+}
+
+h2 {
+    font-size: 1.5rem !important;
+}
+
+input[type=number],
+input[type=text],
+#valorCdi,
+#valorIpca {
+    border: none;
+    border-bottom: 0.5px solid black;
+    background-color: rgba(239, 239, 239, 255) !important;
+}
+
+#submit {
+    background-color: rgb(235, 140, 84);
+    border: 1px solid rgb(235, 140, 84);
+    color: black;
+    border-radius: 6px;
+}
+
+#reset {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    border-radius: 6px;
+}
+
+.card {
+    margin: 1rem;
+    background-color: rgba(239, 239, 239, 255) !important;
+}
+
+.card-text,
+.card-body,
+.card-title {
+    background-color: rgba(239, 239, 239, 255) !important;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 0.7rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+input[type=radio]+label {
+    border-color: black;
+    background-color: #efefef;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+input[type=radio]+label>i {
+    display: none;
+}
+
+input[type=radio]:checked+label>i {
+    display: inline-block;
+}
+
+.btn-radio input[type=radio]+label:hover {
+    border-color: black;
+    color: white;
+    background-color: rgb(235, 140, 84);
+}
+
+.btn-radio input[type=radio]:checked+label {
+    border-color: black;
+    background-color: rgb(235, 140, 84);
+    color: white;
+}
+
+input[type=checkbox]+label {
+    border-color: black;
+    background-color: #efefef;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+input[type=checkbox]+label>i {
+    display: none;
+}
+
+input[type=checkbox]:checked+label>i {
+    display: inline-block;
+}
+
+.btn-checkbox input[type=checkbox]+label:hover {
+    border-color: black;
+    color: white;
+    background-color: rgb(235, 140, 84);
+}
+
+.btn-checkbox input[type=checkbox]:checked+label {
+    border-color: black;
+    background-color: rgb(235, 140, 84);
+    color: white;
+    font-size: 0.6rem;
+}
+
+.invalid-feedback {
+    font-size: 0.8rem !important;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+div.form-check.btn-checkbox.btn-group.block,
+div.form-check.btn-radio.btn-group.block {
+    padding: 0px;
+}

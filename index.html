@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Simulador de Investimentos - EQI</title>
+    <meta name="description" content="Simulador de Investimentos para o processo seletivo da EQI Investimentos.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, EQI Investimentos, Renda Fixa">
+    <meta name="author" content="Filipe Cela">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3d1229cba1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Simulador de Investimentos</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 simulador">
+                <h2>Simulador</h2>
+                <form class="row g-3 needs-validation" method="post" action="#" novalidate>
+                    <div class="col-md-6" id="rend">
+                        <h6>Rendimento</h6>
+                        <div class="form-check btn-radio btn-group block" role="group">
+                            <input type="radio" class="form-check-input btn-check btn-bruto" name="valor" id="checkBruto" autocomplete="off" value="bruto" checked>
+                            <label class="btn btn-outline-secondary btn-block w-100" for="checkBruto"><i class="fa fa-check"></i> Bruto</label>
+                            <input type="radio" class="form-check-input btn-check btn-liquido" name="valor" id="checkLiquido" autocomplete="off" value="liquido">
+                            <label class="btn btn-outline-secondary btn-block w-100" for="checkLiquido"><i class="fa fa-check"></i> Liquido</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="index">
+                        <h6>Tipos de Indexação</h6>
+                        <div class="form-check btn-checkbox btn-group block" role="group">
+                            <input class="form-check-input btn-check btn-pre " type="checkbox" name="indexacao" id="checkPre" value="pre" autocomplete="off" checked>
+                            <label class="btn btn-outline-secondary btn-block w-100" for="checkPre"><i class="fa fa-check"></i> PRÉ</label>
+                            <input class="form-check-input btn-check btn-pos" type="checkbox" name="indexacao" id="checkPos" value="pos" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-block w-100" for="checkPos"><i class="fa fa-check"></i> PÓS</label>
+                            <input class="form-check-input btn-check btn-fixado" type="checkbox" name="indexacao" id="checkFixado" value="fixado" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-block w-100" for="checkFixado"><i class="fa fa-check"></i> FIXADO</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="aporteInicial" class="form-label">Aporte Inicial</label>
+                        <input type="text" name="aporteInicial" id="currency-field" class="aporteInicial" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="R$5.000" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha este campo.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="aporteMensal" class="form-label">Aporte Mensal</label>
+                        <input type="text" name="aporteMensal" id="currency-field" class="aporteMensal" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="R$250" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha este campo.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="prazo" class="form-label">Prazo (em meses)</label>
+                        <input type="number" class="form-control" id="prazo" name="prazo" value="" placeholder="Ex.: 12" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha este campo.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="rentabilidade" class="form-label">Rentabilidade</label>
+                        <input type="number" class="form-control" id="rentabilidade" name="rentabilidade" value="" placeholder="Ex.: 20%" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha este campo.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ipca" class="form-label">IPCA (ao ano)</label>
+                        <span class="input-group-text" id="valorIpca"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cdi" class="form-label">CDI (ao ano)</label>
+                        <span class="input-group-text" id="valorCdi"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-secondary btn-block w-100" type="reset" id="reset">Limpar Dados</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-block w-100" id="submit">Simular</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-7 resultados">
+                <h2>Resultado da Simulação</h2>
+                <div class="row g-3">
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body">
+                            <h6 class="card-title">Valor final bruto</h6>
+                            <p class="card-text" id="finalBruto"></p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body">
+                            <h6 class="card-title">Alíquota do IR</h6>
+                            <p class="card-text" id="aliquotaIR"></p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body">
+                            <h6 class="card-title">Valor pago em IR</h6>
+                            <p class="card-text" id="valorIR"></p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body">
+                            <h6 class="card-title ">Valor final líquido</h6>
+                            <p class="card-text" id="finalLiquido"></p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body ">
+                            <h6 class="card-title ">Valor total investido</h6>
+                            <p class="card-text" id="valorInvestido"></p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 shadow mb-5 rounded" style="width: 11rem;">
+                        <div class="card-body">
+                            <h6 class="card-title ">Ganho líquido</h6>
+                            <p class="card-text" id="ganhoLiquido"></p>
+                        </div>
+                    </div>
+                    <div id="grafico">
+                        <canvas id="myChart" width="600" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/api.js "></script>
+    <script src="js/app.js "></script>
+    <script src="js/chart.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
