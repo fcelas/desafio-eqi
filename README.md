@@ -22,10 +22,9 @@
         <li><code>cd desafio-fake-api</code></li>
         <li><code>npm install</code></li>
         <li><code>npx json-server db.json</code></li>
-        <li><code>npm start</code></li>
     </ul>
     A API ficará localizada na porta <code>http://localhost:3000</code>.
-    Volte à pasta <code>desafio-eqi</code> e rode <code>npm start</code>
+    Volte à pasta <code>desafio-eqi</code> e rode <code>index.html</code>
   </li>
     
 <h3>O que foi utilizado no projeto</h3>
