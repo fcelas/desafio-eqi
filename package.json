@@ -255,6 +255,7 @@
         "yargs-parser": "^20.2.9"
     },
     "scripts": {
+        "start": "npm run deafio-eqi",
         "test": "jest"
     },
     "repository": {
