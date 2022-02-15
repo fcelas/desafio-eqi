@@ -24,7 +24,9 @@
         <li><code>npx json-server db.json</code></li>
     </ul>
     A API ficará localizada na porta <code>http://localhost:3000</code>.
-    Volte à pasta <code>desafio-eqi</code> e rode <code>index.html</code>
+    Volte à pasta <code>desafio-eqi</code> e rode 
+    <code>npm install http-server --save-dev</code>
+    <code>npm start</code>
   </li>
     
 <h3>O que foi utilizado no projeto</h3>
