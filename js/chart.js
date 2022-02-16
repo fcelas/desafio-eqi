@@ -1,18 +1,3 @@
-/*
-var chart = {
-    async: true,
-    crossDomain: true,
-    url: "http://localhost:3000/simulacoes",
-    method: "GET",
-};
-
-$.ajax(chart).done(function grafico(response) {
-    for (let i = 0; i < response.length; i++) {
-        console.log(response[i].graficoValores)
-    }
-}); 
-*/
-
 var simulation = {
     async: true,
     crossDomain: true,
@@ -41,14 +26,14 @@ $("form").submit(function(event) {
                     const datapoints = JSON.parse(this.responseText);
 
                     const comAporte = datapoints.map(
-                        function(index) {
+                        function cAporte(index) {
                             return index.graficoValores.comAporte
                         }
                     )
                     console.log(comAporte)
 
                     const semAporte = datapoints.map(
-                        function(index) {
+                        function sAporte(index) {
                             return index.graficoValores.semAporte
                         }
                     )

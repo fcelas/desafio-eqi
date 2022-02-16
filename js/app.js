@@ -81,7 +81,6 @@ function formatCurrency(input, blur) {
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
 
-function formatPercentage() {}
 
 // FORMS
 //FUNÇÃO PARA NÃO PERMITIR MARCAR MAIS DE UM CHECKBOX
