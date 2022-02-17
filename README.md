@@ -3,6 +3,7 @@
 <h3>Primeiros passos</h3>
 
 <ul>
+  <li>Baixe o <a href="https://nodejs.org/en/download/">Node</a></li>
   <li>Baixe o <a href="https://www.docker.com/products/docker-desktop">Docker</a> em seu computador</li>
   <li>Após baixar o Docker, execute no terminal o comando <code>docker pull filipecela/desafioeqi:v1</code></li>
   <li>
